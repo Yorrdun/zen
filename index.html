@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>澤恩香港數字科技有限公司 | Zen En Digital</title>
+  <meta name="description" content="澤恩香港數字科技有限公司 — TikTok Marketing API 技术对接与跨境数字广告投放系统开发" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0c1a1f;
+      --ink-soft: #2a3f47;
+      --fog: #e8f0f2;
+      --mist: #f4f8f9;
+      --sea: #0d7377;
+      --sea-deep: #095456;
+      --coral: #c45c26;
+      --line: rgba(12, 26, 31, 0.12);
+      --max: 1080px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--mist);
+      line-height: 1.65;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a { color: var(--sea); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .brand {
+      font-family: "Outfit", "Noto Sans TC", sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    /* —— Header —— */
+    header {
+      position: relative;
+      z-index: 2;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: var(--max);
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    header .logo {
+      font-size: 1.05rem;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    header nav a {
+      color: var(--ink-soft);
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-left: 1.5rem;
+      text-decoration: none;
+    }
+
+    header nav a:hover { color: var(--sea); }
+
+    /* —— Hero —— */
+    .hero {
+      position: relative;
+      flex: 1;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse 80% 60% at 85% 20%, rgba(13, 115, 119, 0.18), transparent 55%),
+        radial-gradient(ellipse 60% 50% at 10% 80%, rgba(196, 92, 38, 0.1), transparent 50%),
+        linear-gradient(165deg, #0c1a1f 0%, #123a3d 45%, #0d5456 100%);
+      color: #f4f8f9;
+      padding: 4.5rem 1.5rem 5.5rem;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(244, 248, 249, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(244, 248, 249, 0.04) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: linear-gradient(to bottom, black 40%, transparent 95%);
+      pointer-events: none;
+      animation: grid-drift 28s linear infinite;
+    }
+
+    @keyframes grid-drift {
+      from { background-position: 0 0; }
+      to { background-position: 48px 48px; }
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    .hero .brand-hero {
+      font-family: "Outfit", "Noto Sans TC", sans-serif;
+      font-size: clamp(1.85rem, 4.5vw, 2.85rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 0.35rem;
+      opacity: 0;
+      animation: rise 0.8s ease 0.1s forwards;
+    }
+
+    .hero .brand-hero span {
+      display: block;
+      font-family: "Noto Sans TC", sans-serif;
+      font-size: clamp(1.1rem, 2.8vw, 1.45rem);
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      margin-top: 0.5rem;
+      color: rgba(244, 248, 249, 0.88);
+    }
+
+    .hero h1 {
+      font-family: "Outfit", sans-serif;
+      font-size: clamp(1.15rem, 2.5vw, 1.45rem);
+      font-weight: 600;
+      color: rgba(244, 248, 249, 0.92);
+      margin: 1.75rem 0 0.75rem;
+      max-width: 28ch;
+      opacity: 0;
+      animation: rise 0.8s ease 0.25s forwards;
+    }
+
+    .hero p.lead {
+      max-width: 38ch;
+      color: rgba(232, 240, 242, 0.78);
+      font-size: 1.05rem;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: rise 0.8s ease 0.4s forwards;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      opacity: 0;
+      animation: rise 0.8s ease 0.55s forwards;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.7rem 1.35rem;
+      font-family: "Outfit", "Noto Sans TC", sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); text-decoration: none; }
+
+    .btn-primary {
+      background: #f4f8f9;
+      color: var(--ink);
+    }
+
+    .btn-primary:hover { background: #fff; color: var(--ink); }
+
+    .btn-ghost {
+      background: transparent;
+      color: #f4f8f9;
+      border: 1px solid rgba(244, 248, 249, 0.45);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(244, 248, 249, 0.08);
+      color: #fff;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* —— Sections —— */
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      width: 100%;
+      padding: 0 1.5rem 4rem;
+    }
+
+    section {
+      padding-top: 3.5rem;
+    }
+
+    section h2 {
+      font-family: "Outfit", "Noto Sans TC", sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    section .section-desc {
+      color: var(--ink-soft);
+      margin-bottom: 1.75rem;
+      max-width: 48ch;
+    }
+
+    .info-list {
+      list-style: none;
+      border-top: 1px solid var(--line);
+    }
+
+    .info-list li {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 1rem;
+      padding: 1.1rem 0;
+      border-bottom: 1px solid var(--line);
+      align-items: baseline;
+    }
+
+    .info-list .label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--sea);
+      font-family: "Outfit", sans-serif;
+    }
+
+    .info-list .value {
+      color: var(--ink);
+      font-size: 1rem;
+    }
+
+    .scope-items {
+      display: grid;
+      gap: 1.25rem;
+    }
+
+    @media (min-width: 640px) {
+      .scope-items { grid-template-columns: 1fr 1fr; }
+    }
+
+    .scope-items article {
+      padding: 0;
+    }
+
+    .scope-items h3 {
+      font-family: "Outfit", "Noto Sans TC", sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: var(--sea-deep);
+    }
+
+    .scope-items p {
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+    }
+
+    .contact-block {
+      margin-top: 0.5rem;
+    }
+
+    .contact-block a.email {
+      font-family: "Outfit", sans-serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 2px solid var(--coral);
+      padding-bottom: 2px;
+      transition: color 0.2s;
+    }
+
+    .contact-block a.email:hover { color: var(--coral); }
+
+    /* —— Footer —— */
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 1.75rem 1.5rem;
+      background: #fff;
+    }
+
+    .footer-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: 0.875rem;
+      color: var(--ink-soft);
+    }
+
+    footer a {
+      color: var(--sea-deep);
+      font-weight: 500;
+    }
+
+    @media (max-width: 560px) {
+      .info-list li {
+        grid-template-columns: 1fr;
+        gap: 0.35rem;
+      }
+
+      header nav a { margin-left: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="logo brand" href="index.html">Zen En Digital</a>
+    <nav>
+      <a href="#about">關於我們</a>
+      <a href="#contact">聯絡</a>
+      <a href="privacy.html">隱私政策</a>
+    </nav>
+  </header>
+
+  <section class="hero" aria-label="品牌首屏">
+    <div class="hero-inner">
+      <p class="brand-hero">
+        Zen En Digital
+        <span>澤恩香港數字科技有限公司</span>
+      </p>
+      <h1>TikTok Marketing API 技術對接與跨境廣告系統</h1>
+      <p class="lead">
+        專注於 TikTok for Business 廣告技術整合，為跨境投放提供穩定、合規的數據與系統能力。
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#contact">聯絡我們</a>
+        <a class="btn btn-ghost" href="privacy.html">隱私政策</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section id="about">
+      <h2>企業資訊</h2>
+      <p class="section-desc">註冊於香港的數字科技公司，面向跨境廣告投放場景提供技術服務。</p>
+      <ul class="info-list">
+        <li>
+          <span class="label">企業全稱</span>
+          <span class="value">澤恩香港數字科技有限公司</span>
+        </li>
+        <li>
+          <span class="label">注册地区</span>
+          <span class="value">Hong Kong</span>
+        </li>
+        <li>
+          <span class="label">經營範圍</span>
+          <span class="value">TikTok Marketing API 技術對接、跨境數字廣告投放系統開發</span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="services">
+      <h2>業務能力</h2>
+      <p class="section-desc">圍繞 TikTok 廣告生態，提供 API 對接與投放系統開發服務。</p>
+      <div class="scope-items">
+        <article>
+          <h3>TikTok Marketing API 技術對接</h3>
+          <p>對接 TikTok for Business Marketing API，獲取廣告帳戶投放數據、轉化數據，用於廣告優化與效果分析。</p>
+        </article>
+        <article>
+          <h3>跨境數字廣告投放系統開發</h3>
+          <p>面向跨境場景定制投放管理與數據同步能力，協助業務方高效管理廣告帳戶與投放策略。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>聯絡方式</h2>
+      <p class="section-desc">如需業務諮詢或技術對接，請透過以下郵箱與我們聯繫。</p>
+      <div class="contact-block">
+        <a class="email" href="mailto:c410588508@gmail.com">c410588508@gmail.com</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p>© 2026 澤恩香港數字科技有限公司 · Hong Kong</p>
+      <a href="privacy.html">隱私政策 / Privacy Policy</a>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>隱私政策 | 澤恩香港數字科技有限公司</title>
+  <meta name="description" content="澤恩香港數字科技有限公司隱私政策 — 適用於 TikTok for Business Marketing API 相關服務，符合 GDPR 與香港 PDPO。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0c1a1f;
+      --ink-soft: #2a3f47;
+      --mist: #f4f8f9;
+      --sea: #0d7377;
+      --sea-deep: #095456;
+      --coral: #c45c26;
+      --line: rgba(12, 26, 31, 0.12);
+      --max: 760px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse 70% 40% at 100% 0%, rgba(13, 115, 119, 0.08), transparent 50%),
+        var(--mist);
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a { color: var(--sea); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1080px;
+      margin: 0 auto;
+      width: 100%;
+      border-bottom: 1px solid var(--line);
+      background: rgba(244, 248, 249, 0.85);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header .logo {
+      font-family: "Outfit", "Noto Sans TC", sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    header nav a {
+      color: var(--ink-soft);
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-left: 1.25rem;
+      text-decoration: none;
+    }
+
+    header nav a:hover { color: var(--sea); }
+
+    .page-hero {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 3rem 1.5rem 1.5rem;
+      width: 100%;
+      opacity: 0;
+      animation: fade-up 0.7s ease forwards;
+    }
+
+    .page-hero .eyebrow {
+      font-family: "Outfit", sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--sea);
+      margin-bottom: 0.75rem;
+    }
+
+    .page-hero h1 {
+      font-family: "Outfit", "Noto Sans TC", sans-serif;
+      font-size: clamp(1.75rem, 4vw, 2.25rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.25;
+      margin-bottom: 0.75rem;
+    }
+
+    .page-hero .meta {
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+    }
+
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem;
+      width: 100%;
+      flex: 1;
+      opacity: 0;
+      animation: fade-up 0.7s ease 0.15s forwards;
+    }
+
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    article section {
+      padding: 1.75rem 0;
+      border-top: 1px solid var(--line);
+    }
+
+    article section:first-of-type { border-top: none; padding-top: 0.5rem; }
+
+    h2 {
+      font-family: "Outfit", "Noto Sans TC", sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.85rem;
+      letter-spacing: -0.02em;
+      color: var(--sea-deep);
+    }
+
+    p, li {
+      color: var(--ink-soft);
+      font-size: 0.98rem;
+      margin-bottom: 0.75rem;
+    }
+
+    ul {
+      padding-left: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    li { margin-bottom: 0.45rem; }
+
+    address {
+      font-style: normal;
+      color: var(--ink);
+      line-height: 1.55;
+      margin: 0.75rem 0 1rem;
+      padding-left: 0.9rem;
+      border-left: 3px solid var(--coral);
+    }
+
+    .highlight {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .contact-inline a {
+      font-family: "Outfit", sans-serif;
+      font-weight: 600;
+      color: var(--ink);
+      border-bottom: 2px solid var(--coral);
+      padding-bottom: 1px;
+    }
+
+    .contact-inline a:hover {
+      color: var(--coral);
+      text-decoration: none;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 1.75rem 1.5rem;
+      background: #fff;
+    }
+
+    .footer-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: 0.875rem;
+      color: var(--ink-soft);
+    }
+
+    footer a {
+      color: var(--sea-deep);
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="logo" href="index.html">Zen En Digital</a>
+    <nav>
+      <a href="index.html">首頁</a>
+      <a href="index.html#contact">聯絡</a>
+    </nav>
+  </header>
+
+  <div class="page-hero">
+    <p class="eyebrow">Privacy Policy</p>
+    <h1>隱私政策</h1>
+    <p class="meta">最後更新日期：2026 年 7 月 14 日 · 適用於澤恩香港數字科技有限公司相關服務</p>
+  </div>
+
+  <main>
+    <article>
+      <section>
+        <h2>1. 控制者資訊</h2>
+        <p>本隱私政策由以下主體制定並適用：</p>
+        <p><span class="highlight">企業完整註冊名稱：</span>澤恩香港數字科技有限公司</p>
+        <p><span class="highlight">香港註冊地址：</span></p>
+        <address>
+          UNIT 11, 9/F THE CLOUD NO.111<br />
+          TUNG CHAU STREET<br />
+          TAI KOK TSUI<br />
+          HK
+        </address>
+        <p class="contact-inline">
+          <span class="highlight">聯繫郵箱：</span>
+          <a href="mailto:c410588508@gmail.com">c410588508@gmail.com</a>
+        </p>
+      </section>
+
+      <section>
+        <h2>2. 業務說明與處理目的</h2>
+        <p>
+          本公司業務包括對接 <strong>TikTok for Business Marketing API</strong>，在客戶授權範圍內獲取廣告帳戶的投放數據、轉化數據，用於廣告投放優化、效果分析及相關系統服務。
+        </p>
+        <p>我們僅在提供上述技術對接與系統服務所必需的範圍內處理相關數據，不會將該等數據用於與服務無關的目的。</p>
+      </section>
+
+      <section>
+        <h2>3. 我們可能處理的數據類型</h2>
+        <p>視 TikTok 開放平台接口及客戶授權範圍而定，可能涉及：</p>
+        <ul>
+          <li>廣告帳戶標識與帳號相關元數據；</li>
+          <li>廣告投放表現數據（如曝光、點擊、花費等彙總或帳戶級指標）；</li>
+          <li>轉化與效果相關數據（用於優化投放）；</li>
+          <li>為建立服務關係而必要的聯繫人姓名、公司名稱、電郵等業務聯繫信息。</li>
+        </ul>
+        <p>除非客戶另行授權且法律允許，我們不以識別特定終端用戶個人的方式處理 TikTok 平台上的終端用戶個人數據。</p>
+      </section>
+
+      <section>
+        <h2>4. 數據來源</h2>
+        <p>與廣告投放相關的數據，主要通過客戶授權後由 <strong>TikTok for Business Marketing API</strong> 獲取；業務聯繫信息則由客戶或合作方在業務溝通中直接提供。</p>
+      </section>
+
+      <section>
+        <h2>5. 數據存儲與共享規則</h2>
+        <ul>
+          <li><strong>平台交互：</strong>投放相關數據僅與 TikTok 平台通過官方 Marketing API 進行交互（讀取或依授權回傳服務所需數據）。</li>
+          <li><strong>不向第三方泄露：</strong>我們不會將投放數據出售、出租或以其他方式向無關第三方泄露。</li>
+          <li><strong>委託處理：</strong>如為運營需要而使用基礎設施或託管服務商，我們將要求其僅按我們的指示處理數據，並採取合理的保密與安全措施。</li>
+          <li><strong>法律要求：</strong>除法律、監管或有管轄權法院依法要求披露外，我們不會對外披露相關數據。</li>
+        </ul>
+        <p>數據將在提供服務、履行合同義務及符合適用法律所要求的期限內保存；期限屆滿或服務終止後，我們將按約定或法律要求刪除或匿名化處理。</p>
+      </section>
+
+      <section>
+        <h2>6. 安全措施</h2>
+        <p>我們採取與其處理風險相稱的技術與組織措施，包括訪問控制、傳輸加密（如 HTTPS）、最小權限及定期審查，以防止未經授權的訪問、泄露、篡改或丟失。</p>
+      </section>
+
+      <section>
+        <h2>7. GDPR 與香港 PDPO 合規聲明</h2>
+        <p>
+          本公司承諾遵守適用的個人資料保護法律，包括但不限於歐盟《一般數據保護條例》（<strong>GDPR</strong>）以及香港《個人資料（私隱）條例》（<strong>PDPO</strong>）的相關要求。
+        </p>
+        <p>我們依據合法依據處理數據（例如：為履行與客戶的合同所必需、經數據主體同意，或為遵守法律義務）。在適用 GDPR 時，我們尊重數據主體的訪問、更正、刪除、限制處理、數據可攜及反對等權利；在適用 PDPO 時，我們尊重個人就其個人資料提出查閱與改正等請求的權利。</p>
+        <p>跨境傳輸時，我們將評估必要性，並在法律要求的情況下採用適當保障措施。</p>
+      </section>
+
+      <section>
+        <h2>8. 用戶數據刪除與申訴渠道</h2>
+        <p>您（或您所代表的客戶/數據主體）可通過以下方式行使權利或提出請求：</p>
+        <ul>
+          <li><strong>數據刪除請求：</strong>要求我們刪除或停止處理與您相關的、由我們控制的個人資料或業務聯繫信息（在法律允許且不影響我們履行法定義務的前提下）；</li>
+          <li><strong>查閱 / 更正：</strong>查詢我們持有的關於您的資料，或要求更正不準確信息；</li>
+          <li><strong>申訴：</strong>若您認為我們的處理行為損害了您的權益，可向我們提出書面申訴，我們將在合理期限內核實並回覆。</li>
+        </ul>
+        <p class="contact-inline">
+          請將請求發送至：
+          <a href="mailto:c410588508@gmail.com">c410588508@gmail.com</a>
+          ，並在郵件中說明您的身份、請求類型及可核實的聯繫方式，以便我們處理。
+        </p>
+        <p>您亦有權向有管轄權的個人資料保護監管機構提出投訴（例如香港個人資料私隱專員公署，或您所在地的數據保護當局）。</p>
+      </section>
+
+      <section>
+        <h2>9. Cookie 與本網站</h2>
+        <p>本靜態官網頁面本身不依賴追蹤型 Cookie 收集個人資料。若未來網站功能變更並使用 Cookie 或類似技術，我們將更新本政策並在適當位置提供說明。</p>
+      </section>
+
+      <section>
+        <h2>10. 政策更新</h2>
+        <p>我們可能不時更新本隱私政策。重大變更將通過網站公示或電郵通知。繼續使用我們的服務即表示您知悉更新後的政策內容。</p>
+      </section>
+
+      <section>
+        <h2>11. 聯繫我們</h2>
+        <p>如對本隱私政策或個人資料處理有任何疑問，請聯繫：</p>
+        <p><strong>澤恩香港數字科技有限公司</strong></p>
+        <p class="contact-inline">
+          電郵：<a href="mailto:c410588508@gmail.com">c410588508@gmail.com</a>
+        </p>
+      </section>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p>© 2026 澤恩香港數字科技有限公司 · Hong Kong</p>
+      <a href="index.html">返回首頁</a>
+    </div>
+  </footer>
+</body>
+</html>
